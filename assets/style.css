@@ -61,7 +61,7 @@ html[data-theme="dark"]{
 
 /* ---------- Reset ---------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
@@ -335,6 +335,7 @@ html[data-theme="dark"] .hero-mesh{opacity:1}
 /* ---------- Newsletter / final CTA ---------- */
 .cta-band{
   background:var(--ink);color:#fff;padding:110px 0;text-align:center;position:relative;overflow:hidden;
+  width:100vw;margin-left:calc(-50vw + 50%);
 }
 .cta-band::before{content:'';position:absolute;inset:0;background:var(--grad-mesh)}
 .cta-band .container{position:relative;z-index:1}
@@ -347,7 +348,7 @@ html[data-theme="dark"] .hero-mesh{opacity:1}
 .newsletter-form input::placeholder{color:rgba(255,255,255,.5)}
 
 /* ---------- Footer ---------- */
-footer{background:var(--ink);color:#c7cbd6;padding:90px 0 0}
+footer{background:var(--ink);color:#c7cbd6;padding:90px 0 0;width:100vw;margin-left:calc(-50vw + 50%)}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:70px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-brand img{height:32px;margin-bottom:18px}
 .footer-brand p{color:#8790a3;font-size:.9rem;max-width:280px}
@@ -807,11 +808,13 @@ html.lenis, html.lenis body{height:auto}
 .logo-text .logo-accent{color:var(--blue)}
 .footer-brand .logo-text{color:#fff;font-size:1.5rem;display:inline-block;margin-bottom:18px}
 
-/* ---------- Google-style review carousel ---------- */
-.greview-slider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 26px;scrollbar-width:none}
-.greview-slider::-webkit-scrollbar{display:none}
+/* ---------- Google-style review carousel (infinite marquee) ---------- */
+.greview-marquee{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);mask-image:linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent)}
+.greview-track{display:flex;gap:24px;width:max-content;animation:greview-scroll 46s linear infinite}
+.greview-marquee:hover .greview-track{animation-play-state:paused}
+@keyframes greview-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .greview-card{
-  flex:0 0 340px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--border);
+  flex:0 0 340px;background:var(--surface);border:1px solid var(--border);
   padding:28px 26px;display:flex;flex-direction:column;border-radius:14px;
   transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
@@ -825,13 +828,6 @@ html.lenis, html.lenis body{height:auto}
 .greview-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .greview-name{font-size:.88rem;font-weight:600}
 .greview-time{font-size:.76rem;color:var(--text-dim)}
-
-.greview-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:8px}
-.greview-arrow{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text);transition:border-color .3s,color .3s,background .3s}
-.greview-arrow:hover{border-color:var(--blue);color:var(--blue)}
-.greview-dots{display:flex;gap:8px}
-.greview-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .3s,width .3s}
-.greview-dot.active{background:var(--blue);width:22px;border-radius:5px}
 
 @media (max-width:700px){.greview-card{flex:0 0 280px}}
 
