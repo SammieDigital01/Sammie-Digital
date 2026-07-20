@@ -416,7 +416,7 @@ footer > .container{position:relative;z-index:1}
 .breadcrumb a{color:var(--blue)}
 
 /* ---------- Values grid ---------- */
-.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
 .value-item{background:var(--bg);padding:44px 30px;position:relative}
 .value-item .value-num{font-family:var(--f-mono);font-size:.75rem;color:var(--blue);letter-spacing:.1em}
 .value-item h3{font-size:1.15rem;margin:16px 0 10px}
@@ -1010,6 +1010,20 @@ html.lenis, html.lenis body{height:auto}
 .card-watermark{
   position:absolute;bottom:-18px;right:-14px;font-size:7rem;color:var(--blue);opacity:.07;
   pointer-events:none;line-height:1;transform:rotate(-8deg);
+}
+
+/* ---------- Challenge problem list ---------- */
+.challenge-wrap{background:var(--ink);padding:50px 44px;clip-path:polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%)}
+.challenge-intro{color:#c7cbd6;font-size:1rem;line-height:1.7;margin-bottom:34px;max-width:720px}
+.challenge-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 32px}
+.challenge-item{display:flex;align-items:flex-start;gap:14px}
+.challenge-item i{color:#E8833A;font-size:1rem;margin-top:3px;flex-shrink:0}
+.challenge-item p{color:#c7cbd6;font-size:.94rem;line-height:1.5}
+.challenge-outcome{color:#8790a3;font-size:.92rem;margin-top:32px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1)}
+
+@media (max-width:780px){
+  .challenge-wrap{padding:36px 26px}
+  .challenge-list{grid-template-columns:1fr}
 }
 
 /* ---------- Mobile nav ---------- */
