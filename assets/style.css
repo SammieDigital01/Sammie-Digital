@@ -1041,6 +1041,31 @@ html.lenis, html.lenis body{height:auto}
   .challenge-list{grid-template-columns:1fr}
 }
 
+/* ---------- Client logo marquee (hero) ---------- */
+.client-trust{margin-top:56px}
+.client-trust-label{
+  text-align:center;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;
+  color:var(--text-dim);text-transform:uppercase;margin-bottom:26px;
+}
+.client-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)}
+.client-track{display:flex;gap:20px;width:max-content;animation:client-scroll 38s linear infinite}
+.client-marquee:hover .client-track{animation-play-state:paused}
+@keyframes client-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.client-card{
+  flex:0 0 auto;height:76px;min-width:150px;background:#fff;border:1px solid var(--border);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;padding:14px 22px;
+}
+.client-card img{
+  max-height:100%;max-width:150px;width:auto;height:auto;object-fit:contain;
+  filter:grayscale(100%) opacity(.55);transition:filter .35s var(--ease);
+}
+.client-card:hover img{filter:grayscale(0%) opacity(1)}
+
+@media (max-width:640px){
+  .client-card{height:60px;min-width:120px;padding:10px 16px}
+  .client-card img{max-width:110px}
+}
+
 /* ---------- Mobile nav ---------- */
 .nav-toggle{display:none;width:40px;height:40px;flex-direction:column;justify-content:center;gap:5px}
 .nav-toggle span{height:2px;background:var(--text);width:100%;transition:transform .3s,opacity .3s}
