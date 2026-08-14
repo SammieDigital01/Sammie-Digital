@@ -1052,12 +1052,11 @@ html.lenis, html.lenis body{height:auto}
 .client-marquee:hover .client-track{animation-play-state:paused}
 @keyframes client-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .client-card{
-  flex:0 0 auto;height:76px;min-width:150px;background:#fff;border:1px solid var(--border);border-radius:10px;
-  display:flex;align-items:center;justify-content:center;padding:14px 22px;
+  flex:0 0 auto;height:76px;min-width:130px;display:flex;align-items:center;justify-content:center;padding:8px 14px;
 }
 .client-card img{
   max-height:100%;max-width:150px;width:auto;height:auto;object-fit:contain;
-  filter:grayscale(100%) opacity(.55);transition:filter .35s var(--ease);
+  filter:grayscale(100%) opacity(.6);transition:filter .35s var(--ease);
 }
 .client-card:hover img{filter:grayscale(0%) opacity(1)}
 
