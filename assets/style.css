@@ -88,7 +88,7 @@ h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;letter-spacing:-.02em;l
 }
 .eyebrow::before{content:'';width:22px;height:1px;background:var(--blue)}
 
-.container{max-width:var(--container);margin:0 auto;padding:0 32px}
+.container{max-width:var(--container);width:100%;margin:0 auto;padding:0 32px}
 section{position:relative}
 
 /* ---------- Scroll progress ---------- */
@@ -200,6 +200,7 @@ html[data-theme="dark"] .hero-mesh{opacity:1}
 
 .hero .container{position:relative;z-index:2}
 .hero-content{max-width:900px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-content > *{min-width:0;max-width:100%}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border:1px solid var(--border);
   border-radius:999px;background:var(--bg-alt);font-family:var(--f-body);font-size:.82rem;font-weight:500;
@@ -1042,7 +1043,7 @@ html.lenis, html.lenis body{height:auto}
 }
 
 /* ---------- Client logo marquee (hero) ---------- */
-.client-trust{margin-top:56px}
+.client-trust{margin-top:56px;width:100%;min-width:0}
 .client-trust-label{
   text-align:center;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;
   color:var(--text-dim);text-transform:uppercase;margin-bottom:26px;
@@ -1074,6 +1075,13 @@ html.lenis, html.lenis body{height:auto}
   padding:100px 32px 40px;overflow-y:auto;border-left:1px solid var(--border);
 }
 .mobile-panel.open{transform:translateX(0)}
+.mobile-close{
+  position:absolute;top:26px;right:26px;width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+  color:var(--text);font-size:1.1rem;transition:border-color .3s,color .3s;
+}
+.mobile-close:hover{border-color:var(--blue);color:var(--blue)}
+body.menu-open .nav-toggle{opacity:0;pointer-events:none}
 .mobile-panel a{display:block;padding:16px 0;font-family:var(--f-display);font-size:1.3rem;border-bottom:1px solid var(--border)}
 .mobile-overlay{position:fixed;inset:0;background:rgba(10,14,26,.5);z-index:1050;opacity:0;pointer-events:none;transition:opacity .4s}
 .mobile-overlay.open{opacity:1;pointer-events:auto}
@@ -1095,4 +1103,6 @@ html.lenis, html.lenis body{height:auto}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
   .newsletter-form{flex-direction:column}
   .port-slide{flex:0 0 300px}
+  .floating-stack{right:auto;left:16px;bottom:16px;gap:10px}
+  .fab{width:44px;height:44px;font-size:1.05rem}
 }

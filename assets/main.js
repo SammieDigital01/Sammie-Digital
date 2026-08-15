@@ -65,11 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const mobilePanel = document.querySelector('.mobile-panel');
   const overlay = document.querySelector('.mobile-overlay');
-  const closeMobile = () => { mobilePanel && mobilePanel.classList.remove('open'); overlay && overlay.classList.remove('open'); };
+  const closeMobile = () => { mobilePanel && mobilePanel.classList.remove('open'); overlay && overlay.classList.remove('open'); document.body.classList.remove('menu-open'); };
   navToggle && navToggle.addEventListener('click', () => {
     mobilePanel.classList.toggle('open'); overlay.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
   });
   overlay && overlay.addEventListener('click', closeMobile);
+  document.querySelector('.mobile-close') && document.querySelector('.mobile-close').addEventListener('click', closeMobile);
   document.querySelectorAll('.mobile-panel a').forEach(a => a.addEventListener('click', closeMobile));
 
   /* ---- Scroll reveal ---- */
