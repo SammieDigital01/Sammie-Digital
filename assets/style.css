@@ -176,13 +176,36 @@ section{position:relative}
 /* ---------- Hero ---------- */
 .hero{
   min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
-  padding-top:var(--nav-h);
+  padding-top:calc(var(--nav-h) + 56px);
 }
 .hero-mesh{position:absolute;inset:0;background:var(--grad-mesh);opacity:.85;z-index:0}
 .hero-bg-photo{
-  position:absolute;inset:0;z-index:0;
+  position:absolute;inset:0;z-index:1;
   background-image:url('https://images.pexels.com/photos/19895883/pexels-photo-19895883.jpeg?auto=compress&cs=tinysrgb&w=1920');
-  background-size:cover;background-position:center;opacity:.08;
+  background-size:cover;background-position:right center;
+  opacity:.5;
+  -webkit-mask-image:linear-gradient(to left, black 0%, black 30%, rgba(0,0,0,.5) 50%, transparent 72%);
+  mask-image:linear-gradient(to left, black 0%, black 30%, rgba(0,0,0,.5) 50%, transparent 72%);
+}
+html[data-theme="dark"] .hero-bg-photo{opacity:.32}
+
+@media (max-width:1080px){
+  .hero-bg-photo{
+    opacity:.36;
+    -webkit-mask-image:linear-gradient(to left, black 0%, black 22%, transparent 62%);
+    mask-image:linear-gradient(to left, black 0%, black 22%, transparent 62%);
+  }
+  html[data-theme="dark"] .hero-bg-photo{opacity:.24}
+  .hero{padding-top:calc(var(--nav-h) + 40px)}
+}
+@media (max-width:780px){
+  .hero-bg-photo{
+    opacity:.2;
+    -webkit-mask-image:linear-gradient(to left, black 0%, black 10%, transparent 42%);
+    mask-image:linear-gradient(to left, black 0%, black 10%, transparent 42%);
+  }
+  html[data-theme="dark"] .hero-bg-photo{opacity:.14}
+  .hero{padding-top:calc(var(--nav-h) + 28px)}
 }
 html[data-theme="light"] .hero-mesh, :root .hero-mesh{opacity:.5}
 html[data-theme="dark"] .hero-mesh{opacity:1}
@@ -212,7 +235,7 @@ html[data-theme="dark"] .hero-mesh{opacity:1}
 }
 .hero h1 .accent{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p.lede{font-size:1.15rem;color:var(--text-dim);max-width:600px;margin:0 auto 38px}
-.hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:70px;justify-content:center}
+.hero-actions{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;justify-content:center}
 .btn-pill{border-radius:999px;clip-path:none}
 
 .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--border)}
@@ -1043,13 +1066,13 @@ html.lenis, html.lenis body{height:auto}
 }
 
 /* ---------- Client logo marquee (hero) ---------- */
-.client-trust{margin-top:56px;width:100%;min-width:0}
+.client-trust{margin-top:30px;width:100%;min-width:0}
 .client-trust-label{
   text-align:center;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;
   color:var(--text-dim);text-transform:uppercase;margin-bottom:26px;
 }
 .client-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)}
-.client-track{display:flex;gap:20px;width:max-content;animation:client-scroll 38s linear infinite}
+.client-track{display:flex;gap:20px;width:max-content;animation:client-scroll 85s linear infinite}
 .client-marquee:hover .client-track{animation-play-state:paused}
 @keyframes client-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .client-card{
