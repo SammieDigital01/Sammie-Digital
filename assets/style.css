@@ -788,9 +788,10 @@ footer > .container{position:relative;z-index:1}
 .live-fallback i{font-size:1.8rem;color:var(--blue)}
 .live-fallback span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.05em}
 .live-frame.loaded .live-fallback{opacity:0;pointer-events:none}
-.live-footer{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;background:var(--ink-soft)}
-.live-footer h3{color:#fff;font-size:1.05rem;margin-bottom:4px}
-.live-footer .live-cat{font-family:var(--f-mono);font-size:.68rem;color:#9fc0ff;letter-spacing:.06em;text-transform:uppercase}
+.live-footer{display:flex;flex-direction:column;gap:8px;padding:20px 22px;background:var(--ink-soft)}
+.live-footer-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.live-footer h3{color:#fff;font-size:1.05rem}
+.live-footer .live-cat{font-family:var(--f-mono);font-size:.72rem;color:#9fc0ff;line-height:1.5}
 .live-footer .live-visit{
   font-family:var(--f-mono);font-size:.72rem;font-weight:600;color:rgba(255,255,255,.65);
   display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;transition:color .3s;
