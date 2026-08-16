@@ -183,19 +183,19 @@ section{position:relative}
   position:absolute;inset:0;z-index:1;
   background-image:url('https://images.pexels.com/photos/19895883/pexels-photo-19895883.jpeg?auto=compress&cs=tinysrgb&w=1920');
   background-size:cover;background-position:right center;
-  opacity:.5;
-  -webkit-mask-image:linear-gradient(to left, black 0%, black 30%, rgba(0,0,0,.5) 50%, transparent 72%);
-  mask-image:linear-gradient(to left, black 0%, black 30%, rgba(0,0,0,.5) 50%, transparent 72%);
+  opacity:.38;
+  -webkit-mask-image:linear-gradient(to left, black 0%, black 16%, rgba(0,0,0,.35) 32%, transparent 48%);
+  mask-image:linear-gradient(to left, black 0%, black 16%, rgba(0,0,0,.35) 32%, transparent 48%);
 }
-html[data-theme="dark"] .hero-bg-photo{opacity:.32}
+html[data-theme="dark"] .hero-bg-photo{opacity:.22}
 
 @media (max-width:1080px){
   .hero-bg-photo{
-    opacity:.36;
-    -webkit-mask-image:linear-gradient(to left, black 0%, black 22%, transparent 62%);
-    mask-image:linear-gradient(to left, black 0%, black 22%, transparent 62%);
+    opacity:.28;
+    -webkit-mask-image:linear-gradient(to left, black 0%, black 12%, transparent 38%);
+    mask-image:linear-gradient(to left, black 0%, black 12%, transparent 38%);
   }
-  html[data-theme="dark"] .hero-bg-photo{opacity:.24}
+  html[data-theme="dark"] .hero-bg-photo{opacity:.18}
   .hero{padding-top:calc(var(--nav-h) + 40px)}
 }
 @media (max-width:780px){
@@ -1067,7 +1067,11 @@ html.lenis, html.lenis body{height:auto}
 }
 
 /* ---------- Client logo marquee (hero) ---------- */
-.client-trust{margin-top:30px;width:100%;min-width:0}
+.client-trust{
+  margin-top:30px;width:100%;min-width:0;position:relative;z-index:2;
+  padding:24px 20px 4px;border-radius:16px;
+  background:linear-gradient(to bottom, var(--bg) 0%, var(--bg) 60%, transparent 100%);
+}
 .client-trust-label{
   text-align:center;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;
   color:var(--text-dim);text-transform:uppercase;margin-bottom:26px;
