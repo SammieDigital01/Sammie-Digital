@@ -101,10 +101,9 @@ section{position:relative}
   transition:opacity .6s var(--ease), visibility .6s var(--ease);
 }
 .loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.loader-mark{width:64px;height:64px;position:relative}
-.loader-mark svg{width:100%;height:100%}
-.loader-mark path{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 1.4s var(--ease) forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
+.loader-mark{width:220px;padding:24px 28px;background:#fff;border-radius:16px;box-shadow:0 30px 70px -20px rgba(0,0,0,.5);opacity:0;animation:loader-in .6s var(--ease) forwards}
+.loader-mark img{width:100%;display:block}
+@keyframes loader-in{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 
 /* ---------- Custom cursor ---------- */
 .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9998;border-radius:50%;transform:translate(-50%,-50%)}
@@ -209,11 +208,6 @@ html[data-theme="dark"] .hero-bg-photo{opacity:.22}
 }
 html[data-theme="light"] .hero-mesh, :root .hero-mesh{opacity:.5}
 html[data-theme="dark"] .hero-mesh{opacity:1}
-.hero-grid{position:absolute;inset:0;z-index:0;
-  background-image:linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size:64px 64px; mask-image:linear-gradient(to bottom, black, transparent 75%);
-  opacity:.5;
-}
 .floater{position:absolute;border:1px solid var(--border);z-index:0;opacity:.7}
 .floater.f1{width:120px;height:120px;top:18%;right:8%;clip-path:polygon(0 0,100% 0,100% 100%,20% 100%);animation:float1 9s ease-in-out infinite}
 .floater.f2{width:60px;height:60px;bottom:22%;right:22%;border-radius:50%;border-color:var(--blue);animation:float2 7s ease-in-out infinite}
@@ -318,7 +312,7 @@ html[data-theme="dark"] .hero-mesh{opacity:1}
 .port-slider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px;scrollbar-width:none}
 .port-slider::-webkit-scrollbar{display:none}
 .port-slide{
-  flex:0 0 400px;scroll-snap-align:start;border:1px solid var(--border);background:var(--surface);
+  flex:0 0 370px;scroll-snap-align:start;border:1px solid var(--border);background:var(--surface);
   clip-path:polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%);
   transition:transform .4s var(--ease), box-shadow .4s var(--ease);
 }
@@ -370,12 +364,6 @@ html[data-theme="dark"] .hero-mesh{opacity:1}
   width:100vw;margin-left:calc(-50vw + 50%);
 }
 .cta-band::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(10,14,26,.88), rgba(10,14,26,.88)), var(--grad-mesh)}
-.cta-band::after{
-  content:'';position:absolute;inset:0;opacity:.05;pointer-events:none;
-  background-image:radial-gradient(circle, #fff 1.5px, transparent 1.5px);
-  background-size:34px 34px;
-  mask-image:radial-gradient(ellipse at center, black 30%, transparent 70%);
-}
 .cta-band .container{position:relative;z-index:1}
 .cta-band h2{font-size:clamp(2.1rem,4.4vw,3.6rem);color:#fff;max-width:800px;margin:20px auto 40px}
 .cta-band .eyebrow{color:var(--steel)}
@@ -387,11 +375,6 @@ html[data-theme="dark"] .hero-mesh{opacity:1}
 
 /* ---------- Footer ---------- */
 footer{background:var(--ink);color:#c7cbd6;padding:90px 0 0;width:100vw;margin-left:calc(-50vw + 50%);position:relative;overflow:hidden}
-footer::before{
-  content:'';position:absolute;inset:0;opacity:.04;pointer-events:none;
-  background-image:radial-gradient(circle, #fff 1.5px, transparent 1.5px);
-  background-size:34px 34px;
-}
 footer > .container{position:relative;z-index:1}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:70px;border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-brand img{height:32px;margin-bottom:18px}
@@ -1021,17 +1004,6 @@ html.lenis, html.lenis body{height:auto}
 .rm-step p{color:#8790a3;font-size:.78rem}
 
 /* ---------- Subtle blueprint background (Why Choose section) ---------- */
-.blueprint-bg{position:relative;overflow:hidden}
-.blueprint-bg::before{
-  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.06;
-  background-image:
-    linear-gradient(var(--blue) 1px, transparent 1px),
-    linear-gradient(90deg, var(--blue) 1px, transparent 1px);
-  background-size:48px 48px;
-  mask-image:radial-gradient(ellipse at center, black 40%, transparent 75%);
-}
-.blueprint-bg > .container{position:relative;z-index:1}
-
 /* ---------- Industries icon grid ---------- */
 .industry-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
 .industry-card{
