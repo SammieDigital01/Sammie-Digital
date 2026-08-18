@@ -384,7 +384,7 @@ footer > .container{position:relative;z-index:1}
 .footer-social a:hover{border-color:var(--blue);color:var(--blue)}
 .footer-col h4{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#8790a3;margin-bottom:22px}
 .footer-col ul li{margin-bottom:13px}
-.footer-col a{font-size:.9rem;color:#c7cbd6;transition:color .3s}
+.footer-col a{font-size:.9rem;color:#c7cbd6;transition:color .3s;overflow-wrap:anywhere;word-break:break-word}
 .footer-col a:hover{color:var(--blue)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0;font-size:.82rem;color:#6b7386}
 .footer-bottom a{color:#8790a3}
@@ -1103,6 +1103,6 @@ body.menu-open .nav-toggle{opacity:0;pointer-events:none}
   .footer-bottom{flex-direction:column;gap:10px;text-align:center}
   .newsletter-form{flex-direction:column}
   .port-slide{flex:0 0 300px}
-  .floating-stack{right:auto;left:16px;bottom:16px;gap:10px}
+  .floating-stack{gap:10px}
   .fab{width:44px;height:44px;font-size:1.05rem}
 }
